@@ -9,16 +9,16 @@ xs = []
 ys = []
 
 video = cv2.VideoCapture("footvolleyball.mp4")
-#load tracker 
+# Carga el rastreador 
 tracker = cv2.TrackerCSRT_create()
 
-#read the first frame of the video
+# Lee el primer cuadro del video
 success,img = video.read()
 
-#selct the bounding box on the image
+# Selecciona el cuadro delimitador de la imagen
 bbox = cv2.selectROI("tracking",img,False)
 
-#initialise the tracker on the img and the bounding box
+# Inicializa el rastreador en la imagen y el cuadro delimitador
 tracker.init(img,bbox)
 
 def goal_track(img,bbox):
