@@ -15,10 +15,10 @@ tracker = cv2.TrackerCSRT_create()
 # Lee el primer cuadro del video
 success,img = video.read()
 
-# Selecciona el cuadro delimitador de la imagen
+# Selecciona el campo delimitador de la imagen
 bbox = cv2.selectROI("tracking",img,False)
 
-# Inicializa el rastreador en la imagen y el cuadro delimitador
+# Inicializa el rastreador en la imagen y el campo delimitador
 tracker.init(img,bbox)
 
 def goal_track(img,bbox):
@@ -62,7 +62,7 @@ while True:
             
     key = cv2.waitKey(1)
     if key == ord('q'):
-        print("Closing")
+        print("Cerrando")
         break
 
 video.release()
